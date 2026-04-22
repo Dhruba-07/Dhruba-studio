@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dhruba Chowdhury</title>
+  <meta name="description" content="Chemical Engineering sophomore at UIC · AI Builder · Lab Researcher." />
+  <meta property="og:title" content="Dhruba Chowdhury" />
+  <meta property="og:description" content="ChemE @ UIC · AI Builder · Lab Researcher" />
+  <meta property="og:url" content="https://dhruba.studio" />
+  <link rel="canonical" href="https://dhruba.studio" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --cream:      #FBF8F2;
+      --cream-2:    #F4EEE2;
+      --cream-3:    #EDE4D3;
+      --amber:      #B8762A;
+      --amber-lt:   #D4952F;
+      --rust:       #9E3D22;
+      --ink:        #1C1208;
+      --ink-2:      #3D2D18;
+      --muted:      #9B8C78;
+      --border:     #E4D9C8;
+      --white:      #FFFFFF;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans:  'Jost', system-ui, sans-serif;
+      --radius-card: 16px;
+      --radius-pill: 100px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 300;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 64px 20px 60px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 480px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .a1 { animation: fadeUp 0.65s cubic-bezier(0.22,1,0.36,1) 0.00s both; }
+    .a2 { animation: fadeUp 0.65s cubic-bezier(0.22,1,0.36,1) 0.09s both; }
+    .a3 { animation: fadeUp 0.65s cubic-bezier(0.22,1,0.36,1) 0.18s both; }
+    .a4 { animation: fadeUp 0.65s cubic-bezier(0.22,1,0.36,1) 0.27s both; }
+    .a5 { animation: fadeUp 0.65s cubic-bezier(0.22,1,0.36,1) 0.36s both; }
+    .a6 { animation: fadeUp 0.65s cubic-bezier(0.22,1,0.36,1) 0.45s both; }
+
+    /* ══ PROFILE ══ */
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      text-align: center;
+    }
+
+    .avatar-wrap { position: relative; width: 82px; height: 82px; }
+
+    .avatar {
+      width: 82px;
+      height: 82px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2.5px solid var(--cream-3);
+      display: block;
+    }
+
+    .status {
+      position: absolute;
+      bottom: 3px; right: 3px;
+      width: 13px; height: 13px;
+      background: #5CB85C;
+      border-radius: 50%;
+      border: 2.5px solid var(--cream);
+    }
+
+    .name {
+      font-family: var(--serif);
+      font-size: clamp(46px, 12vw, 62px);
+      font-weight: 300;
+      letter-spacing: 0.04em;
+      line-height: 0.95;
+      color: var(--ink);
+    }
+    .name em { font-style: italic; color: var(--amber); }
+
+    .tagline {
+      font-size: 10.5px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .bio {
+      font-family: var(--serif);
+      font-size: 17.5px;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.72;
+      color: var(--ink-2);
+      max-width: 370px;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: center;
+    }
+
+    .badge {
+      font-size: 9.5px;
+      font-weight: 400;
+      letter-spacing: 0.07em;
+      padding: 3px 11px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      background: var(--cream-2);
+    }
+
+    .badge.hi {
+      border-color: rgba(184,118,42,0.45);
+      color: var(--amber);
+      background: rgba(184,118,42,0.06);
+    }
+
+    /* ── RULE ── */
+    .rule { width: 36px; height: 1px; background: var(--border); margin: 0 auto; }
+
+    /* ── SECTION ── */
+    .section { display: flex; flex-direction: column; gap: 8px; }
+
+    .section-label {
+      font-size: 9.5px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding-left: 2px;
+      margin-bottom: 2px;
+    }
+
+    /* ══ FEATURED CARD ══ */
+    .card {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 17px 18px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      text-decoration: none;
+      color: var(--ink);
+      transition:
+        transform 0.25s cubic-bezier(0.22,1,0.36,1),
+        box-shadow 0.25s cubic-bezier(0.22,1,0.36,1),
+        border-color 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(100,60,10,0.09);
+      border-color: var(--cream-3);
+    }
+
+    .card-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 11px;
+      background: var(--cream-2);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+      transition: background 0.2s;
+    }
+    .card:hover .card-icon { background: var(--cream-3); }
+
+    .card-body { flex: 1; min-width: 0; }
+
+    .card-title {
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      color: var(--ink);
+    }
+
+    .card-sub {
+      font-size: 11px;
+      font-weight: 300;
+      color: var(--muted);
+      margin-top: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .card-arrow {
+      font-size: 14px;
+      color: var(--border);
+      flex-shrink: 0;
+      transition: color 0.2s, transform 0.25s cubic-bezier(0.22,1,0.36,1);
+    }
+    .card:hover .card-arrow { color: var(--amber); transform: translateX(3px); }
+
+    /* amber tint */
+    .card.amber-tint {
+      border-color: rgba(184,118,42,0.22);
+      background: rgba(184,118,42,0.03);
+    }
+    .card.amber-tint .card-icon {
+      background: rgba(184,118,42,0.09);
+      border-color: rgba(184,118,42,0.2);
+    }
+    .card.amber-tint:hover {
+      box-shadow: 0 8px 28px rgba(184,118,42,0.12);
+      border-color: rgba(184,118,42,0.4);
+    }
+
+    /* rust tint */
+    .card.rust-tint {
+      border-color: rgba(158,61,34,0.18);
+      background: rgba(158,61,34,0.025);
+    }
+    .card.rust-tint .card-icon {
+      background: rgba(158,61,34,0.08);
+      border-color: rgba(158,61,34,0.18);
+    }
+    .card.rust-tint:hover {
+      box-shadow: 0 8px 28px rgba(158,61,34,0.1);
+      border-color: rgba(158,61,34,0.35);
+    }
+
+    /* ══ PILL LINKS ══ */
+    .pills { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .pill {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 16px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-pill);
+      text-decoration: none;
+      color: var(--ink-2);
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+      transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s cubic-bezier(0.22,1,0.36,1),
+        color 0.2s ease;
+    }
+
+    .pill:hover {
+      background: var(--cream-2);
+      border-color: var(--cream-3);
+      transform: translateY(-1px);
+      color: var(--ink);
+    }
+
+    .pill-icon { font-size: 13px; line-height: 1; }
+
+    .pill.cta {
+      background: var(--amber);
+      border-color: var(--amber);
+      color: #fff;
+      font-weight: 500;
+    }
+    .pill.cta:hover {
+      background: var(--amber-lt);
+      border-color: var(--amber-lt);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    /* ══ FOOTER ══ */
+    .footer { text-align: center; padding-top: 4px; }
+
+    .footer p {
+      font-size: 10.5px;
+      font-weight: 300;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+
+    .footer span {
+      font-family: var(--serif);
+      font-style: italic;
+      color: var(--amber);
+    }
+
+    /* ══ RESPONSIVE ══ */
+    @media (max-width: 400px) {
+      body { padding: 48px 16px 48px; }
+      .pills { gap: 6px; }
+      .pill { font-size: 11.5px; padding: 8px 13px; }
+      .card { padding: 14px 15px; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ══ PROFILE ══ -->
+  <div class="profile a1">
+    <div class="avatar-wrap">
+      <img class="avatar"
+        src="https://github.com/dchow6.png"
+        alt="Dhruba Chowdhury"
+        onerror="this.src='https://ui-avatars.com/api/?name=Dhruba+Chowdhury&background=EDE4D3&color=B8762A&bold=true&size=128'" />
+      <div class="status"></div>
+    </div>
+
+    <h1 class="name">Dhruba<br><em>Chowdhury</em></h1>
+
+    <p class="tagline">ChemE · UIC · Chicago &nbsp;·&nbsp; Rising Junior</p>
+
+    <p class="bio">
+      Rising junior researcher at the intersection of chemical engineering and AI — building things that matter, one experiment at a time.
+    </p>
+
+    <div class="badges">
+      <span class="badge hi">Open to Internships 2027</span>
+      <span class="badge">Dean's List</span>
+      <span class="badge">Merit Scholar</span>
+      <span class="badge">F-1 · CPT / STEM OPT</span>
+      <span class="badge">Lab Researcher</span>
+    </div>
+  </div>
+
+  <div class="rule a1"></div>
+
+  <!-- ══ PROFESSIONAL ══ -->
+  <div class="section a2">
+    <p class="section-label">Professional</p>
+
+    <a href="https://dhrubachowdhury.github.io" class="card amber-tint" target="_blank" rel="noopener">
+      <div class="card-icon">🌐</div>
+      <div class="card-body">
+        <p class="card-title">Portfolio</p>
+        <p class="card-sub">dhrubachowdhury.github.io</p>
+      </div>
+      <span class="card-arrow">→</span>
+    </a>
+
+    <a href="https://linkedin.com/in/dchowdhury007" class="card" target="_blank" rel="noopener">
+      <div class="card-icon">💼</div>
+      <div class="card-body">
+        <p class="card-title">LinkedIn</p>
+        <p class="card-sub">linkedin.com/in/dchowdhury007</p>
+      </div>
+      <span class="card-arrow">→</span>
+    </a>
+
+    <a href="https://github.com/dchow6" class="card" target="_blank" rel="noopener">
+      <div class="card-icon">💻</div>
+      <div class="card-body">
+        <p class="card-title">GitHub</p>
+        <p class="card-sub">github.com/dchow6</p>
+      </div>
+      <span class="card-arrow">→</span>
+    </a>
+
+    <a href="https://uic.joinhandshake.com/profiles/dhrubaaa" class="card" target="_blank" rel="noopener">
+      <div class="card-icon">🤝</div>
+      <div class="card-body">
+        <p class="card-title">Handshake</p>
+        <p class="card-sub">Internship &amp; career profile</p>
+      </div>
+      <span class="card-arrow">→</span>
+    </a>
+
+    <a href="mailto:dchow6@uic.edu?subject=Resume%20Request%20%E2%80%94%20Dhruba%20Chowdhury&body=Hi%20Dhruba%2C%0A%0AI%27d%20love%20to%20review%20your%20resume." class="card rust-tint">
+      <div class="card-icon">📄</div>
+      <div class="card-body">
+        <p class="card-title">Resume</p>
+        <p class="card-sub">Available on request via email</p>
+      </div>
+      <span class="card-arrow">↗</span>
+    </a>
+  </div>
+
+  <!-- ══ PROJECTS ══ -->
+  <div class="section a3">
+    <p class="section-label">Projects</p>
+
+    <a href="https://craveitout.vercel.app" class="card amber-tint" target="_blank" rel="noopener">
+      <div class="card-icon">🍔</div>
+      <div class="card-body">
+        <p class="card-title">CraveItOut</p>
+        <p class="card-sub">AI-powered food app · Claude API · Vercel</p>
+      </div>
+      <span class="card-arrow">→</span>
+    </a>
+
+    <a href="https://dhruba-07.github.io/ai-newsletter" class="card" target="_blank" rel="noopener">
+      <div class="card-icon">📰</div>
+      <div class="card-body">
+        <p class="card-title">The World Edge</p>
+        <p class="card-sub">AI newsletter for small business owners</p>
+      </div>
+      <span class="card-arrow">→</span>
+    </a>
+  </div>
+
+  <!-- ══ CAMPUS & RESEARCH — PILLS ══ -->
+  <div class="section a4">
+    <p class="section-label">Campus &amp; Research</p>
+    <div class="pills">
+      <a href="https://engineering.uic.edu" class="pill" target="_blank" rel="noopener">
+        <span class="pill-icon">🔬</span> ODES Lab · UIC
+      </a>
+      <a href="https://www.aiche.org" class="pill" target="_blank" rel="noopener">
+        <span class="pill-icon">⚗️</span> AIChE
+      </a>
+      <a href="https://engineeringstudentcouncil.uic.edu" class="pill" target="_blank" rel="noopener">
+        <span class="pill-icon">🏛️</span> Eng. Student Council
+      </a>
+      <a href="https://orgs.uic.edu" class="pill" target="_blank" rel="noopener">
+        <span class="pill-icon">🇧🇩</span> Bangladesh Student Assoc.
+      </a>
+    </div>
+  </div>
+
+  <!-- ══ SOCIAL — PILLS ══ -->
+  <div class="section a5">
+    <p class="section-label">Socials</p>
+    <div class="pills">
+      <a href="https://www.instagram.com/romeow__1/" class="pill" target="_blank" rel="noopener">
+        <span class="pill-icon">📸</span> Instagram
+      </a>
+      <a href="https://www.snapchat.com/add/Dhru_ba7" class="pill" target="_blank" rel="noopener">
+        <span class="pill-icon">👻</span> Snapchat
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=100046126959234" class="pill" target="_blank" rel="noopener">
+        <span class="pill-icon">📘</span> Facebook
+      </a>
+      <a href="mailto:dchow6@uic.edu" class="pill cta">
+        <span class="pill-icon">✉️</span> Email me
+      </a>
+    </div>
+  </div>
+
+  <!-- ══ FOOTER ══ -->
+  <div class="footer a6">
+    <p><span>dhruba.studio</span> &nbsp;·&nbsp; 2026</p>
+  </div>
+
+</div>
+</body>
+</html>
